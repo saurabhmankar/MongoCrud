@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html>
+<head>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script> 
+        function reg() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/adddetails',
+                    data: $('#fm').serialize(),
+                    dataType: 'json',
+                    
+                    
+                });
+            }   
+        </script> -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/bootstrapv4.1.2.min.css" />
+ 
+    
+</head>
+<body>
+    <form id="fm" method="POST" action="/adddetails">
+        <input type="text" class="form-control" name="game" id="game"placeholder="Game"><br>
+        <input type="text" class="form-control" name="publisher"id="publisher" placeholder="Publisher"><br>
+        <input type="date" class="form-control" name="released"id="released" placeholder="Released date"><br>
+        <input type="text" class="form-control" name="rating" id="rating" placeholder="Rating"><br>
+        <input type="text" class="form-control" name="score" id="score" placeholder="Scores"><br>
+        <button class="btn btn-lg btn-info" type="submit">Insert</button>
+        
+    </form>
+    
+</body>
+</html>
