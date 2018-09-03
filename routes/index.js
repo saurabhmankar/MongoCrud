@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+const Window = require('window');
+ 
+const window = new Window();
 //var document=require('document');
 var fs = require('fs');
 var bodyParser = require('body-parser');
@@ -96,12 +99,26 @@ router.get('/delet', function (req, res, next) {
 });
 //Updating records in the database
 router.get('/edit', function (req, res, next) {
-  var id = req.param('id');
+  global.upid= req.param('id');
+  res.redirect('../public/update.html?upid='+upid);
 
   //console.log(JSON.stringify(data));
-  console.log(id);
+  console.log(upid);
   //console.log(ugame);
   //console.log(upublisher);
+});
+
+router.post('/updt',function(req,res,next){
+var ugame=req.body.ugame;
+var upublisher=req.body.upublisher;
+console.log(ugame);
+console.log(upublisher);
+console.log(upid);
+User.update({"_id":upid},{$set:{game:ugame,publisher:upublisher}},function(err,data){
+  console.log("data updated");
+  res.redirect('/list');
+});
+
 });
 
 module.exports = router;

@@ -31,9 +31,7 @@
             tblRow+="<td>" + arrItem[i].rating + "</td>";
             tblRow+="<td>" + arrItem[i].score + "</td>";
             tblRow+="<td>"+"<a href='/delet?id="+arrItem[i]._id+"' class='btn btn-md btn-danger'>Delete</a></button></td>";
-            tblRow+="<td>"+"<form method='POST' id='fm'>"+"<input type='text' name='ugame' id='ugame' placeholder='game'></td>";
-            tblRow+="<td>"+"<input type='text' name='upublisher' id='upublisher' placeholder='publisher'></td>"
-            tblRow+="<td>"+"<a href='/edit?id="+arrItem[i]._id+"' class='btn btn-md btn-info' type='submit'>Update</a>"+"</form>"+"</td>"+"</tr>";
+            tblRow+="<td>"+"<a href='/edit?id="+arrItem[i]._id+"' class='btn btn-md btn-info'>Update</a>"+"</td>"+"</tr>";
 
             $('#product_table').append(tblRow);
 
@@ -72,8 +70,6 @@
           <th>Rating</th>
           <th>Score</th>
           <th>Delete game</th>
-          <th>edit game</th>
-          <th>edit publisher</th>
           <th>Update</th>
 
         </tr>
