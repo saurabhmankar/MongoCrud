@@ -23,7 +23,8 @@ router.post("/adddetails", (req, res) => {
   var myData = new User(req.body);
   myData.save()
     .then(item => {
-      res.send("item saved to database");
+      // res.send("item saved to database");
+      res.redirect('/list');
     })
     .catch(err => {
       res.status(400).send("unable to save to database");
@@ -91,7 +92,7 @@ router.get('/delet', function (req, res, next) {
    
 
   });
-
+  res.redirect('/list');
 });
 //Updating records in the database
 router.get('/edit', function (req, res, next) {
